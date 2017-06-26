@@ -18,7 +18,7 @@ var YoutubeDownload = React.createClass({
 
         var tempLink = document.createElement('a');
         tempLink.style.display = 'none';
-        tempLink.href = 'http://127.0.0.1:8080/youtubeDownload/'+ filen +
+        tempLink.href = 'http://67.205.172.210:8080/youtubeDownload/'+ filen +
                         '?id=' + this.props.youtubeId + 
                         '&itag=' + this.props.itag;
 
@@ -36,7 +36,7 @@ var YoutubeDownload = React.createClass({
 
         var tempLink = document.createElement('a');
         tempLink.style.display = 'none';
-        tempLink.href = 'http://127.0.0.1:8080/youtubeDownload/'+ filen + 
+        tempLink.href = 'http://67.205.172.210:8080/youtubeDownload/'+ filen + 
                         '?id=' + this.props.youtubeId + 
                         '&itag=lowest';
 
