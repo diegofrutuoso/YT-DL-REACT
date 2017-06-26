@@ -1,0 +1,110 @@
+.ignore{
+    margin-left: 0px,
+}
+
+.logo{
+    float: left;
+    margin-top: 2%;
+    margin-left: 10px;
+}
+
+.titulo{
+    float: left;
+    margin-top: 8%;
+    font-size: 60px;
+    height: 70px;
+    font-weight: bold;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.painel{
+    float: left;
+    margin-top: 0px
+}
+
+.painel-conteudo{
+    float: left;
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.youtubeText{
+    float: left;
+    overflow: hidden; 
+    padding-right: .5em;
+    margin-left: 18px;
+}
+
+.botaoBuscar{
+    float: right;
+    margin-right: 4px;
+    width: 9.5%;
+}
+
+.tamanhoTexto{
+    width: 90%;
+    height: 34px;
+}
+
+.imagem-thumb{
+    float:left;
+    width: 100%;
+    height: 100%;
+}
+
+.titulo-thumb{
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.outros-thumb{
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.resol-selec{
+    float: left;
+}
+
+.resol-selec p{
+    margin-top: 7px;
+    margin-left: 10%;
+    width: 100%;
+}
+
+.ou{
+    width: 100%;
+    text-align: center;
+}
+
+.texto-url{
+    float: left;
+    margin-left: 18px;
+    overflow: hidden; 
+    width: 90%;
+    height: 34px;
+    padding-right: .5em;
+}
+
+.botao-url{
+    width: 85px;
+}
+
+.conteudo{
+    width: 1128px;
+}
+
+.carregando{
+    float: left;
+    margin-left: 35%;
+	margin-right: 35%;
+}
+
+body{
+    background-color: #C0C0C0
+}
