@@ -1,0 +1,12 @@
+{
+    "authkey": "KfOFfr8ARWiBUZcrSmQ6fv8kBbZJjyKmKKmKoXAduiZ7",
+    "tokenExpirationTime": 60,
+    "developmentMode" : true,
+    "connection": {
+        "host": "127.0.0.1",
+        "port": 8080,
+        "routes": {
+            "cors": true
+        }
+    }
+}
