@@ -30001,7 +30001,7 @@ var YoutubeRecomendado = React.createClass({
                         { className: 'imgHolder' },
                         React.createElement(
                             'a',
-                            { href: "https://http://67.205.172.210?youtubeId=" + resolucao.youtubeId },
+                            { href: "http://67.205.172.210?youtubeId=" + resolucao.youtubeId },
                             React.createElement('img', { className: 'img-thumbnail imagem-thumb',
                                 src: resolucao.imagem,
                                 alt: 'avatar' }),
@@ -30022,7 +30022,7 @@ var YoutubeRecomendado = React.createClass({
                             { className: 'tituloHolder' },
                             React.createElement(
                                 'a',
-                                { href: "https://http://67.205.172.210?youtubeId=" + resolucao.youtubeId },
+                                { href: "http://67.205.172.210?youtubeId=" + resolucao.youtubeId },
                                 '\xA0',
                                 resolucao.nome
                             )
