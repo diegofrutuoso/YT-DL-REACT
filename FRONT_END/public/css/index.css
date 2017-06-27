@@ -120,6 +120,35 @@
 	margin-right: 35%;
 }
 
+.imgHolder {
+    position: relative;
+}
+.imgHolder span {
+    position: absolute;
+    right: 10px;
+    margin-top: 48%;
+    color: white;
+    background: rgb(54, 25, 25); /* Fall-back for browsers that don't
+                                    support rgba */
+    background: rgba(54, 25, 25, .9);
+}
+
+.texto-recomendados{
+    margin-left: 3%;
+}
+
+.tituloHolder{
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.subtitulos{
+    color:gray;
+    font-size: small;
+}
+
 body{
     background-color: #C0C0C0
 }

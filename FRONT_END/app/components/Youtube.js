@@ -1,6 +1,7 @@
 var React = require('react');
 var YoutubeHeader = require('./YoutubeHeader');
 var YoutubeVideo = require('./YoutubeVideo');
+var YoutubeRecomendado = require('./YoutubeRecomendado');
 
 var Youtube = React.createClass({
     getInitialState: function () {
@@ -25,6 +26,9 @@ var Youtube = React.createClass({
                 <YoutubeVideo
                     youtubeInfo = {this.state.youtubeInfo}
                     youtubeLoading = {this.state.youtubeLoading}
+                />
+                <YoutubeRecomendado
+                    youtubeInfo={this.state.youtubeInfo} 
                 />
             </div>
         )
