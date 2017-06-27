@@ -10,13 +10,11 @@ module.exports = function(joi) {
 
             if(request.query.itag !== 'lowest'){
                 reply(null, stream).header('Accept-Ranges',' bytes')
-                                   .header('Content-Disposition','attachment')
-                                   .header('filename', request.params.nome);            
+                                   .header('Content-Disposition','attachment');            
             }
             else{
                 reply(null, stream).header('Content-Type',' audio/mpeg')
-                                   .header('Content-Disposition','attachment')
-                                   .header('filename', request.params.nome);
+                                   .header('Content-Disposition','attachment');
             }
             
             //No final
