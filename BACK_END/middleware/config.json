@@ -3,7 +3,7 @@
     "tokenExpirationTime": 60,
     "developmentMode" : true,
     "connection": {
-        "host": "127.0.0.1",
+        "host": "67.205.172.210",
         "port": 8080,
         "routes": {
             "cors": true

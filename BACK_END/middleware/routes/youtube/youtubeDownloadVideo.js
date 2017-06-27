@@ -9,10 +9,14 @@ module.exports = function(joi) {
             var stream = ytdl('http://www.youtube.com/watch?v='+request.query.id,{"quality": request.query.itag});
 
             if(request.query.itag !== 'lowest'){
-                reply(null, stream).header('Accept-Ranges',' bytes');            
+                reply(null, stream).header('Accept-Ranges',' bytes')
+                                   .header('Content-Disposition','attachment')
+                                   .header('filename', request.params.nome);            
             }
             else{
-                reply(null, stream).header('Content-Type',' audio/mpeg');
+                reply(null, stream).header('Content-Type',' audio/mpeg')
+                                   .header('Content-Disposition','attachment')
+                                   .header('filename', request.params.nome);
             }
             
             //No final

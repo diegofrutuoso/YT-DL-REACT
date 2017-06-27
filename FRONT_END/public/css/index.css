@@ -29,6 +29,21 @@
     height: 100%;
 }
 
+@-moz-document url-prefix() {
+    .painel{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    .painel-conteudo{
+        float: left;
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .youtubeText{
     float: left;
     overflow: hidden; 
