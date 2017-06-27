@@ -29,7 +29,7 @@ var YoutubeVideo = React.createClass({
                             </div>
                             <div className="col-lg-8">
                                 <div className="row">
-                                    <a href={this.props.youtubeInfo.link}>
+                                    <a href={this.props.youtubeInfo.link} target="_blank">
                                         <p className="titulo-thumb">{this.props.youtubeInfo.nome}</p>
                                     </a>
                                 </div>

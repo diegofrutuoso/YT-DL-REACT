@@ -12,7 +12,7 @@ var YoutubeRecomendado = React.createClass({
                 return (
                     <div className="col-lg-4" key={resolucao.youtubeId}>
                         <div className="imgHolder">
-                            <a href={"https://youtube.com/watch?v=" + resolucao.youtubeId}>
+                            <a href={"https://http://67.205.172.210?youtubeId=" + resolucao.youtubeId}>
                                 <img className="img-thumbnail imagem-thumb"
                                     src={resolucao.imagem}
                                     alt="avatar" />
@@ -21,7 +21,7 @@ var YoutubeRecomendado = React.createClass({
                         </div>
                         <OverlayTrigger placement="bottom" overlay={tooltip}>
                         <div className="tituloHolder">
-                            <a href={"https://youtube.com/watch?v=" + resolucao.youtubeId}>&nbsp;{resolucao.nome}</a>
+                            <a href={"https://http://67.205.172.210?youtubeId=" + resolucao.youtubeId}>&nbsp;{resolucao.nome}</a>
                         </div>
                          </OverlayTrigger>
                         <div className="subtitulos">

@@ -57,7 +57,7 @@ var YoutubeHeader = React.createClass({
         return (
             <div>
                 <div>
-                    <img src="./images/LOGO.png" className="img-rounded logo" alt="Logo Youtube" width="30%" height="30%" />
+                    <img src="./images/LOGO.png" className="img-rounded logo" alt="Logo Youtube" />
                     <label className="titulo">Download de vídeos</label>
                 </div>
                 <div className="panel panel-default painel">

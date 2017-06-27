@@ -2,6 +2,7 @@ var React = require('react');
 var YoutubeHeader = require('./YoutubeHeader');
 var YoutubeVideo = require('./YoutubeVideo');
 var YoutubeRecomendado = require('./YoutubeRecomendado');
+var YoutubeInfo = require('../services/YoutubeInfo');
 
 var Youtube = React.createClass({
     getInitialState: function () {
@@ -10,11 +11,27 @@ var Youtube = React.createClass({
             youtubeLoading: ''
         }
     },
+    componentWillMount: function(){
+        var urlParams = new URLSearchParams(window.location.search);
+        if( urlParams.get('youtubeId') !== null)
+        {
+            this.searchInfo(urlParams.get('youtubeId'));
+        }
+    },
     updateInfo: function (info) {
         this.setState({ youtubeInfo: info });
     },
     updateLoading: function(loading){
         this.setState({youtubeLoading: loading});
+    },
+    searchInfo: function(id){
+        this.updateInfo(null);
+        this.updateLoading('X');
+
+        YoutubeInfo.getById(id).then(function (response) {
+            this.updateInfo(response.data);
+            this.updateLoading(' ');
+        }.bind(this));
     },
     render: function () {
         return (
