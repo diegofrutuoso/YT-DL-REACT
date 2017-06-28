@@ -9,27 +9,31 @@ var YoutubeRecomendado = React.createClass({
                 var tooltip = (
                     <Tooltip id="tooltip">{resolucao.nome}</Tooltip>
                 );
-                return (
-                    <div className="col-lg-4" key={resolucao.youtubeId}>
-                        <div className="imgHolder">
-                            <a href={"http://67.205.172.210?youtubeId=" + resolucao.youtubeId}>
-                                <img className="img-thumbnail imagem-thumb"
-                                    src={resolucao.imagem}
-                                    alt="avatar" />
-                                <span>&nbsp;{resolucao.duracao}&nbsp;</span>
-                            </a>
+                console.log(resolucao.qtdVideos);
+
+                if (typeof resolucao.qtdVideos == 'undefined') {
+                    return (
+                        <div className="col-lg-4" key={resolucao.youtubeId}>
+                            <div className="imgHolder">
+                                <a href={"http://67.205.172.210?youtubeId=" + resolucao.youtubeId}>
+                                    <img className="img-thumbnail imagem-thumb"
+                                        src={resolucao.imagem}
+                                        alt="avatar" />
+                                    <span>&nbsp;{resolucao.duracao}&nbsp;</span>
+                                </a>
+                            </div>
+                            <OverlayTrigger placement="bottom" overlay={tooltip}>
+                                <div className="tituloHolder">
+                                    <a href={"http://67.205.172.210?youtubeId=" + resolucao.youtubeId}>&nbsp;{resolucao.nome}</a>
+                                </div>
+                            </OverlayTrigger>
+                            <div className="subtitulos">
+                                &nbsp;{resolucao.autor}&nbsp; - &nbsp;{resolucao.visualizacoes}
+                            </div>
+                            <br />
                         </div>
-                        <OverlayTrigger placement="bottom" overlay={tooltip}>
-                        <div className="tituloHolder">
-                            <a href={"http://67.205.172.210?youtubeId=" + resolucao.youtubeId}>&nbsp;{resolucao.nome}</a>
-                        </div>
-                         </OverlayTrigger>
-                        <div className="subtitulos">
-                        &nbsp;{resolucao.autor}&nbsp; - &nbsp;{resolucao.visualizacoes}
-                        </div>
-                        <br />
-                    </div>
-                )
+                    )
+                }
             });
 
             return (

@@ -28606,51 +28606,55 @@ var YoutubeRecomendado = React.createClass({
                     { id: 'tooltip' },
                     resolucao.nome
                 );
-                return React.createElement(
-                    'div',
-                    { className: 'col-lg-4', key: resolucao.youtubeId },
-                    React.createElement(
+                console.log(resolucao.qtdVideos);
+
+                if (typeof resolucao.qtdVideos == 'undefined') {
+                    return React.createElement(
                         'div',
-                        { className: 'imgHolder' },
-                        React.createElement(
-                            'a',
-                            { href: "http://67.205.172.210?youtubeId=" + resolucao.youtubeId },
-                            React.createElement('img', { className: 'img-thumbnail imagem-thumb',
-                                src: resolucao.imagem,
-                                alt: 'avatar' }),
-                            React.createElement(
-                                'span',
-                                null,
-                                '\xA0',
-                                resolucao.duracao,
-                                '\xA0'
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        OverlayTrigger,
-                        { placement: 'bottom', overlay: tooltip },
+                        { className: 'col-lg-4', key: resolucao.youtubeId },
                         React.createElement(
                             'div',
-                            { className: 'tituloHolder' },
+                            { className: 'imgHolder' },
                             React.createElement(
                                 'a',
                                 { href: "http://67.205.172.210?youtubeId=" + resolucao.youtubeId },
-                                '\xA0',
-                                resolucao.nome
+                                React.createElement('img', { className: 'img-thumbnail imagem-thumb',
+                                    src: resolucao.imagem,
+                                    alt: 'avatar' }),
+                                React.createElement(
+                                    'span',
+                                    null,
+                                    '\xA0',
+                                    resolucao.duracao,
+                                    '\xA0'
+                                )
                             )
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'subtitulos' },
-                        '\xA0',
-                        resolucao.autor,
-                        '\xA0 - \xA0',
-                        resolucao.visualizacoes
-                    ),
-                    React.createElement('br', null)
-                );
+                        ),
+                        React.createElement(
+                            OverlayTrigger,
+                            { placement: 'bottom', overlay: tooltip },
+                            React.createElement(
+                                'div',
+                                { className: 'tituloHolder' },
+                                React.createElement(
+                                    'a',
+                                    { href: "http://67.205.172.210?youtubeId=" + resolucao.youtubeId },
+                                    '\xA0',
+                                    resolucao.nome
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'subtitulos' },
+                            '\xA0',
+                            resolucao.autor,
+                            '\xA0 - \xA0',
+                            resolucao.visualizacoes
+                        ),
+                        React.createElement('br', null)
+                    );
+                }
             });
 
             return React.createElement(
