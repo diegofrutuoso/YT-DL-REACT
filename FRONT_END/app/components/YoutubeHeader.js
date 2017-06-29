@@ -8,17 +8,17 @@ var YoutubeHeader = React.createClass({
             name: ''
         }
     },
-    handleClickUrl: function(){
+    handleClickUrl: function () {
         var indiceCortado = this.refs.youtubeURL.value.indexOf("?v=");
-        var idCortado = this.refs.youtubeURL.value.substring(indiceCortado+3,this.refs.youtubeURL.value.length);
+        var idCortado = this.refs.youtubeURL.value.substring(indiceCortado + 3, this.refs.youtubeURL.value.length);
         indiceCortado = idCortado.indexOf("&");
 
         console.log(idCortado);
 
-        if(indiceCortado > 0){
-            idCortado = idCortado.substring(0,indiceCortado);
+        if (indiceCortado > 0) {
+            idCortado = idCortado.substring(0, indiceCortado);
         }
-        
+
         this.props.updateInfo(null);
         this.props.updateLoading('X');
 
@@ -29,23 +29,23 @@ var YoutubeHeader = React.createClass({
 
         this.refs.youtubeURL.value = '';
     },
-    handleSubmit: function(e){
+    handleSubmit: function (e) {
 
         e.preventDefault();
 
         var indiceCortado = this.refs.youtubeURL.value.indexOf("?v=");
-        var idCortado = this.refs.youtubeURL.value.substring(indiceCortado+3,this.refs.youtubeURL.value.length);
+        var idCortado = this.refs.youtubeURL.value.substring(indiceCortado + 3, this.refs.youtubeURL.value.length);
         indiceCortado = idCortado.indexOf("&");
 
         console.log(idCortado);
 
-        if(indiceCortado > 0){
-            idCortado = idCortado.substring(0,indiceCortado);
+        if (indiceCortado > 0) {
+            idCortado = idCortado.substring(0, indiceCortado);
         }
 
         this.props.updateInfo(null);
         this.props.updateLoading('X');
-        
+
         YoutubeInfo.getById(idCortado).then(function (response) {
             this.props.updateInfo(response.data);
             this.props.updateLoading(' ');
