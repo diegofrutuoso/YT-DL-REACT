@@ -72,7 +72,7 @@ var YoutubeHeader = React.createClass({
                 { className: 'panel panel-default painelFB' },
                 React.createElement(
                     'div',
-                    { className: 'panel-body painelFB' },
+                    { className: 'panel-body painel' },
                     React.createElement(
                         'form',
                         { onSubmit: this.handleSubmit },

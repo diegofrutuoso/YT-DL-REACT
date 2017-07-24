@@ -23,7 +23,7 @@ var YoutubeHeader = React.createClass({
                     <label className="tituloFB">Download de vídeo do Facebook</label>
                 </div>
                 <div className="panel panel-default painelFB">
-                    <div className="panel-body painelFB">
+                    <div className="panel-body painel">
                         <form onSubmit={this.handleSubmit}>
                             <h2>Cole o link do vídeo</h2>
                             <div className="row">
