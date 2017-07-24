@@ -34,9 +34,9 @@ module.exports = function (joi) {
                         imagem = imagem.substring((imagem.indexOf('url(&quot;') + 10), imagem.length);
                         imagem = imagem.substring(0, imagem.indexOf('&quot;'));
                         imagem = imagem.split('&amp;').join('&');
-                        imagem = imagem.split('\3a ').join(':');
-                        imagem = imagem.split('\3d ').join('=');
-                        imagem = imagem.split('\26 ').join('&');
+                        imagem = imagem.split('\\3a ').join(':');
+                        imagem = imagem.split('\\3d ').join('=');
+                        imagem = imagem.split('\\26 ').join('&');
 
                         retorno.thumbnail = imagem;
 
@@ -47,9 +47,9 @@ module.exports = function (joi) {
                         perfil = perfil.substring((perfil.indexOf('url(&quot;') + 10), perfil.length);
                         perfil = perfil.substring(0, perfil.indexOf('&quot;'));
                         perfil = perfil.split('&amp;').join('&');
-                        perfil = perfil.split('\3a ').join(':');
-                        perfil = perfil.split('\3d ').join('=');
-                        perfil = perfil.split('\26 ').join('&');
+                        perfil = perfil.split('\\3a ').join(':');
+                        perfil = perfil.split('\\3d ').join('=');
+                        perfil = perfil.split('\\26 ').join('&');
 
                         retorno.fotoPerfil = perfil;
 
