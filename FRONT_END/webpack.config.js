@@ -1,9 +1,12 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: "./app/App.js",
+  entry: { app: "./app/App.js",
+           facebookapp: "./app/FacebookApp.js"
+  },
   output: {
-    filename: "public/bundle.js"
+    filename: "public/[name].js",
+    chunkFilename: "[id].chunk.js"
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -11,11 +14,10 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    })
+    new webpack.optimize.CommonsChunkPlugin({
+			name: "commons",
+			filename: "public/commons.js",
+		})
   ],
   module: {
     loaders: [
