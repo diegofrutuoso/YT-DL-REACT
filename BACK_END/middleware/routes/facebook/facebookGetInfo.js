@@ -87,15 +87,21 @@ module.exports = function (joi) {
 
                         //Agora obtemos a URL da versão "HD"
                         requestX(request.query.url,
-                            { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36' } },
+                            { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36' } },
                             function (error, response, html) {
 
                                 if (!error && response.statusCode == 200) {
+				    console.log(html);
                                     var urlHD = html;
                                     //Pegamos o objeto correto
-                                    urlHD = html.substring(html.indexOf('_53mw _4gbu'), (html.indexOf('_53mw _4gbu') + 1000));
-                                    urlHD = urlHD.substring((urlHD.indexOf('src=&quot;') + 16), urlHD.length);
-                                    urlHD = urlHD.substring(0, urlHD.indexOf('&quot;'));
+                                    urlHD = html.substring(html.indexOf('hd_src:"') + 8, (html.indexOf('hd_src:') + 1000));
+				    console.log(urlHD);
+                                    //urlHD = urlHD.substring((urlHD.indexOf('"') + 4), urlHD.length);
+					//console.log('---------------------------------------------------------------------');
+				    //console.log(urlHD);
+                                    urlHD = urlHD.substring(0, urlHD.indexOf('"'));
+					console.log('---------------------------------------------------------------------');
+					console.log(urlHD);
                                     //Depois arrancamos os caracteres estranhos dele
                                     urlHD = urlHD.split('\\/').join('/');
                                     urlHD = urlHD.split('&amp;').join('&');
