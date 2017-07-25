@@ -107,6 +107,19 @@
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.outros-thumbFB{
+    float: left;
+    font-size: 13px;
+    margin-left: 0px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.downloadButtonFB{
+  margin-left: 0px;
+}
+
 .resol-selec{
     float: left;
 }

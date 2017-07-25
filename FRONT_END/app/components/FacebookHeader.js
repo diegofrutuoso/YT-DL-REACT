@@ -1,4 +1,5 @@
 var React = require('react');
+var FacebookInfo = require('../services/FacebookInfo');
 var Glyphicon = require('react-bootstrap/lib/Glyphicon');
 
 var YoutubeHeader = React.createClass({
@@ -8,11 +9,30 @@ var YoutubeHeader = React.createClass({
         }
     },
     handleClickUrl: function () {
-        
+
+        this.props.updateInfo(null);
+        this.props.updateLoading('X');
+
+        FacebookInfo.getByUrl(this.refs.facebookURL.value).then(function (response) {
+            this.props.updateInfo(response.data);
+            this.props.updateLoading(' ');
+        }.bind(this));
+
+        this.refs.facebookURL.value = '';
+
     },
     handleSubmit: function (e) {
 
         e.preventDefault();
+        this.props.updateInfo(null);
+        this.props.updateLoading('X');
+
+        FacebookInfo.getByUrl(this.refs.facebookURL.value).then(function (response) {
+            this.props.updateInfo(response.data);
+            this.props.updateLoading(' ');
+        }.bind(this));
+
+        this.refs.facebookURL.value = '';
 
     },
     render: function () {

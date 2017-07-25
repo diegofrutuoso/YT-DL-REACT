@@ -57,7 +57,7 @@ module.exports = function (joi) {
                         var indiceNomePerfil = html.indexOf('aria-label') + 11;
 
                         nomePerfil = html.substring(indiceNomePerfil, indiceNomePerfil + 200);
-                        nomePerfil = nomePerfil.substring(0,(nomePerfil.indexOf('role')-1));
+                        nomePerfil = nomePerfil.substring(0, (nomePerfil.indexOf('role') - 1));
                         nomePerfil = nomePerfil.split('"').join('');
 
                         retorno.nomePerfil = nomePerfil;
@@ -67,7 +67,7 @@ module.exports = function (joi) {
 
                         descricao = descricao.substring(indiceDescricao, indiceDescricao.length);
                         descricao = descricao.substring((descricao.indexOf('>') + 1), descricao.length);
-                        descricao = descricao.substring(0,descricao.indexOf('</div>'));
+                        descricao = descricao.substring(0, descricao.indexOf('</div>'));
                         descricao = descricao.split('&quot;').join('\"');
 
                         descricao = striptags(descricao);
@@ -79,13 +79,34 @@ module.exports = function (joi) {
 
                         Publicado = Publicado.substring(indicePublicado, indicePublicado.length);
                         Publicado = Publicado.substring((Publicado.indexOf('>') + 1), Publicado.length);
-                        Publicado = Publicado.substring(0,Publicado.indexOf('</div>'));
+                        Publicado = Publicado.substring(0, Publicado.indexOf('</div>'));
 
                         Publicado = striptags(Publicado);
 
                         retorno.publicado = Publicado;
 
-                        reply(retorno);
+                        //Agora obtemos a URL da versão "HD"
+                        requestX(request.query.url,
+                            { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36' } },
+                            function (error, response, html) {
+
+                                if (!error && response.statusCode == 200) {
+                                    var urlHD = html;
+                                    //Pegamos o objeto correto
+                                    urlHD = html.substring(html.indexOf('_53mw _4gbu'), (html.indexOf('_53mw _4gbu') + 1000));
+                                    urlHD = urlHD.substring((urlHD.indexOf('src=&quot;') + 16), urlHD.length);
+                                    urlHD = urlHD.substring(0, urlHD.indexOf('&quot;'));
+                                    //Depois arrancamos os caracteres estranhos dele
+                                    urlHD = urlHD.split('\\/').join('/');
+                                    urlHD = urlHD.split('&amp;').join('&');
+
+                                    console.log(urlHD);
+
+                                    retorno.HD = urlHD;
+                                }
+
+                                reply(retorno);
+                            });
                     }
                 });
         },
