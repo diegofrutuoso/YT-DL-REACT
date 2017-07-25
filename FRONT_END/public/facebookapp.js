@@ -220,7 +220,7 @@ var FacebookVideo = React.createClass({
                                 { className: 'row' },
                                 React.createElement(
                                     'p',
-                                    { className: 'titulo-thumb' },
+                                    { className: 'titulo-thumbFB' },
                                     this.props.facebookInfo.nomePerfil
                                 )
                             ),
@@ -238,13 +238,14 @@ var FacebookVideo = React.createClass({
                                 { className: 'row' },
                                 React.createElement(
                                     'p',
-                                    { className: 'outros-thumb' },
+                                    { className: 'outros-thumbFB' },
                                     'Publicado em: ',
                                     this.props.facebookInfo.publicado
                                 )
                             ),
                             React.createElement(FacebookDownload, {
                                 url: this.props.facebookInfo.url,
+                                HD: this.props.facebookInfo.HD,
                                 filename: this.props.facebookInfo.nomePerfil
                             }),
                             React.createElement(
@@ -360,37 +361,61 @@ var Button = __webpack_require__(39);
 var Button = __webpack_require__(39);
 
 var FacebookDownload = React.createClass({
-    displayName: 'FacebookDownload',
+        displayName: 'FacebookDownload',
 
-    handleSubmitVideo: function () {
+        handleSubmitVideo: function () {
 
-        console.log('video');
-        console.log(this.props.filename);
+                console.log('video');
+                console.log(this.props.filename);
 
-        var filen = this.props.filename.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '') + '.mp4';
+                var filen = this.props.filename.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '') + '.mp4';
 
-        var tempLink = document.createElement('a');
-        tempLink.style.display = 'none';
-        tempLink.href = this.props.url;
+                var tempLink = document.createElement('a');
+                tempLink.style.display = 'none';
+                tempLink.href = this.props.url;
 
-        tempLink.setAttribute('download', filen);
-        tempLink.setAttribute('target', '_blank');
-        document.body.appendChild(tempLink);
-        tempLink.click();
-        document.body.removeChild(tempLink);
-    },
-    render: function () {
-        return React.createElement(
-            'div',
-            null,
-            React.createElement(
-                Button,
-                { onClick: this.handleSubmitVideo, className: 'downloadButtonFB' },
-                React.createElement(Glyphicon, { glyph: 'film' }),
-                '\xA0Baixar v\xEDdeo'
-            )
-        );
-    }
+                tempLink.setAttribute('download', filen);
+                tempLink.setAttribute('target', '_blank');
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+        },
+        handleSubmitVideoHD: function () {
+
+                console.log('video');
+                console.log(this.props.filename);
+
+                var filen = this.props.filename.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '') + '.mp4';
+
+                var tempLink = document.createElement('a');
+                tempLink.style.display = 'none';
+                tempLink.href = this.props.HD;
+
+                tempLink.setAttribute('download', filen);
+                tempLink.setAttribute('target', '_blank');
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+        },
+        render: function () {
+                return React.createElement(
+                        'div',
+                        null,
+                        React.createElement(
+                                Button,
+                                { onClick: this.handleSubmitVideo, className: 'downloadButtonFB' },
+                                React.createElement(Glyphicon, { glyph: 'film' }),
+                                '\xA0Baixar V\xEDdeo Baixa Qualidade'
+                        ),
+                        '\xA0',
+                        React.createElement(
+                                Button,
+                                { onClick: this.handleSubmitVideoHD, className: 'downloadButtonFB' },
+                                React.createElement(Glyphicon, { glyph: 'download-alt' }),
+                                '\xA0Baixar V\xEDdeo em HD'
+                        )
+                );
+        }
 });
 
 module.exports = FacebookDownload;

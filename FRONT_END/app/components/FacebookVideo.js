@@ -26,18 +26,19 @@ var FacebookVideo = React.createClass({
                             </div>
                             <div className="col-lg-8">
                                 <div className="row">
-                                    <p className="titulo-thumb">{this.props.facebookInfo.nomePerfil}</p>
+                                    <p className="titulo-thumbFB">{this.props.facebookInfo.nomePerfil}</p>
                                 </div>
                                 <div className="row">
                                     <p className="outros-thumbFB">{this.props.facebookInfo.descricao}</p>
                                 </div>
                                 <div className="row">
-                                    <p className="outros-thumb">
+                                    <p className="outros-thumbFB">
                                         Publicado em: {this.props.facebookInfo.publicado}
                                     </p>
                                 </div>
                                 <FacebookDownload
                                     url={this.props.facebookInfo.url}
+                                    HD={this.props.facebookInfo.HD}
                                     filename={this.props.facebookInfo.nomePerfil}
                                 />
                                 <div className="row">

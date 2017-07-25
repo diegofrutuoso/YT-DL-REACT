@@ -91,23 +91,12 @@ module.exports = function (joi) {
                             function (error, response, html) {
 
                                 if (!error && response.statusCode == 200) {
-				    console.log(html);
                                     var urlHD = html;
-                                    //Pegamos o objeto correto
                                     urlHD = html.substring(html.indexOf('hd_src:"') + 8, (html.indexOf('hd_src:') + 1000));
-				    console.log(urlHD);
-                                    //urlHD = urlHD.substring((urlHD.indexOf('"') + 4), urlHD.length);
-					//console.log('---------------------------------------------------------------------');
-				    //console.log(urlHD);
                                     urlHD = urlHD.substring(0, urlHD.indexOf('"'));
-					console.log('---------------------------------------------------------------------');
-					console.log(urlHD);
                                     //Depois arrancamos os caracteres estranhos dele
                                     urlHD = urlHD.split('\\/').join('/');
                                     urlHD = urlHD.split('&amp;').join('&');
-
-                                    console.log(urlHD);
-
                                     retorno.HD = urlHD;
                                 }
 

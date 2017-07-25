@@ -100,6 +100,14 @@
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.titulo-thumbFB{
+    float: left;
+    margin-left: 2%;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .outros-thumb{
     float: left;
     font-size: 15px;
@@ -110,8 +118,8 @@
 .outros-thumbFB{
     float: left;
     font-size: 13px;
-    margin-left: 0px;
-    margin-right: 10px;
+    margin-left: 2%;
+    margin-right: 5%;
     font-weight: bold;
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
